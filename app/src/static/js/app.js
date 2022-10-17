@@ -1,10 +1,11 @@
-function CompanyNane(){
+function GetCN(){
 
     var ret = 'Non Defined';
 
     try 
     {
-        ret = process.env.CN;
+        const CN = process.env.CN;
+        ret = CN.toString();
     }
     catch(ex)
     {
@@ -106,7 +107,7 @@ function AddItemForm({ onNewItem }) {
 
     return (
         <Form onSubmit={submitNewItem}>
-            <h1>Company: {CompanyNane()}</h1>
+            <h1>Company: {GetCN()}</h1>
             <InputGroup className="mb-3">
                 <Form.Control
                     value={newItem}
