@@ -4,7 +4,7 @@ function GetCN(){
 
     try 
     {
-        const CN = process.env.CN || "Demo";
+        const CN = process.env.CN;
         ret = CN.toString();
     }
     catch(ex)
