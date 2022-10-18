@@ -1,19 +1,3 @@
-function GetCN(){
-
-    var ret = 'Non Defined';
-
-    try 
-    {
-        const CN = process.env.CN;
-        ret = CN.toString();
-    }
-    catch(ex)
-    {
-        ret = ex.toString();
-    }
-    return ret;
-}
-
 function App() {
     const { Container, Row, Col } = ReactBootstrap;
     return (
@@ -29,6 +13,7 @@ function App() {
 
 function TodoListCard() {
     const [items, setItems] = React.useState(null);
+
 
     React.useEffect(() => {
         fetch('/items')
@@ -88,6 +73,11 @@ function AddItemForm({ onNewItem }) {
 
     const [newItem, setNewItem] = React.useState('');
     const [submitting, setSubmitting] = React.useState(false);
+    const [cn, setCn] = React.useState('');
+
+    React.useEffect(() => {
+        getCn();
+    }, []);
 
     const submitNewItem = e => {
         e.preventDefault();
@@ -105,9 +95,16 @@ function AddItemForm({ onNewItem }) {
             });
     };
 
+
+    const getCn = () => {
+        fetch('/cn')
+            .then(r => r.json())
+            .then(item => setCn(item.cn));
+    };
+
     return (
         <Form onSubmit={submitNewItem}>
-            <h1>Company: {GetCN()}</h1>
+            <h1>Company: {cn}</h1>
             <InputGroup className="mb-3">
                 <Form.Control
                     value={newItem}
