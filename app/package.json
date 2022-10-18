@@ -14,7 +14,8 @@
     "sqlite3": "^5.0.0",
     "uuid": "^3.3.3",
     "wait-port": "^0.2.2",
-    "dotenv":"^16.0.3"
+    "dotenv":"^16.0.3",
+    "webpack":"^5.74.0"
   },
   "resolutions": {
     "ansi-regex": "5.0.1"
