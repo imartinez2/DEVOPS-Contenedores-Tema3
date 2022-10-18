@@ -1,11 +1,11 @@
 #Detener el container de la aplicación
-docker stop tema2lab1
+docker stop tema3lab1
 
 #Eliminar el container de la aplicación
-docker rm tema2lab1
+docker rm tema3lab1
 
 #Eliminar la imagen de la aplicación
-docker rmi tema2lab:v1.0
+docker rmi tema3lab:v1.0
 
 #Detener el container de la base de datos
 docker stop mysqltodoapp
